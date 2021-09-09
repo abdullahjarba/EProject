@@ -1,28 +1,22 @@
 const express = require("express");
+
 const app = express();
 
-const userRoutes = express.require("./Routes/userRoutes");
-const orderItemRoutes = express.require("./Routes/orderItemRoutes");
-const productRoutes = express.require("./Routes/productRoutes");
-const orderRoutes = express.require("./Routes/orderRoutes");
+const authRoutes = require("./Routes/auth");
+const shopRoutes = require("./Routes/shop");
+const adminRoutes = require("./Routes/admin");
 
-app.get("/", function (req, res) {
-    res.render();
-  
-});
+app.set('view engine' , 'ejs');
+app.use(express.static('public'))
 
 
-app.use("/user",userRoutes);
+app.use("/auth" , authRoutes);
 
+app.use("/shop" , shopRoutes);
 
-app.use("/product", productRoutes);
-
-
-app.use("/orderItem", orderItemRoutes);
-
-app.use("/order", orderRoutes);
+app.use("/admin" , adminRoutes);
 
 
 app.listen(8080,() => {
-  console.log("server runing");
+  console.log("server is running");
 });
