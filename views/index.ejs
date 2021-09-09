@@ -13,8 +13,8 @@
 </head>
 
   <body>
-
-    <%- includes('artials/header.ejs')  %>
+ 
+    <%- include('partials/header.ejs')  %>
      
 <section class="section-2">
   <div class="container">
@@ -37,39 +37,8 @@
 
   </div>
 
-
-    
-    <footer>
- 
-      <div class="help">
-         <ul>
-           <li>faq</li>
-           <li>return policy</li>
-           <li>contact us</li>
-         </ul>
-   
-      </div>
-   
-      <div class="social">
-   <ul class="li"><ion-icon name="logo-youtube"></ion-icon></ul>
-   <ul class="li"><ion-icon name="logo-instagram"></ion-icon></ul>
-   <ul class="li"><ion-icon name="logo-twitter"></ion-icon></ul>
-   
-      </div>
-   
-      <div class="privacy">
-   <ul>
-     <li>privacy policy</li>
-   </ul>
-      </div>
-   
-    
-   
-    <div class="copy-right">
-      <p>&#169;gardenia 2020-2021</p> 
-     
-    </div>
-   </footer>
+  <%- include('partials/footer.ejs')  %>
+  
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

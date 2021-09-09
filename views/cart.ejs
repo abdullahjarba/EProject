@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/logic.js"></script>
+  </head>
+  <body>
+    <%- include('partials/header.ejs') %>
+
+    <div class="cart-container">
+      <div class="container-1">
+        <span class="a">item</span>
+        <span class="b">quantity</span>
+        <span class="c">subtotal</span>
+        <span class="d">remove</span>
+      </div>
+
+      <div class="container-2 items"></div>
+
+      <div class="container-3">
+        <button class="return-to-shop"><a href="">continue shopping</a></button>
+        <div class="container">
+          <strong>total: <span class="total">0</span></strong>
+          <form
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            target="_top"
+          >
+            <input type="hidden" name="cmd" value="_xclick" />
+            <input
+              type="hidden"
+              name="business"
+              value="waleedalshamekh@gmail.com"
+            />
+            <input type="hidden" name="lc" value="US" />
+            <input type="hidden" name="item_name" value="Paypal_button" />
+            <input type="hidden" name="amount" value="100.00" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="hidden" name="button_subtype" value="services" />
+            <input type="hidden" name="no_note" value="0" />
+            <input
+              type="hidden"
+              name="bn"
+              value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"
+            />
+            <input
+              type="image"
+              src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+              border="0"
+              name="submit"
+              alt="PayPal - The safer, easier way to pay online!"
+            />
+            <img
+              alt=""
+              border="0"
+              src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+              width="1"
+              height="1"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/footer.ejs') %>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
