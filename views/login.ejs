@@ -17,26 +17,44 @@
   <body>
     <%- include('partials/header.ejs') %>
 
+    <div>
+      <% if(errorMessage) { %>
+      <div style="margin-left: 20px">
+        <p style="color: red"><%= errorMessage %></p>
+      </div>
+      <% } %>
+    </div>
+
     <div class="sign-up_container">
-      <form action="">
+      <form action="/login" method="POST">
         <div class="container">
           <div class="name">
-            <label for="name">name</label>
-            <input name="name" class="name" type="text" id="name" />
+            <label for="email">Email</label>
+            <br />
+            <input
+              name="email"
+              class="email"
+              type="email"
+              id="email"
+              value="<%=oldInput.email%>"
+            />
           </div>
 
           <div class="password">
-            <label for="password">password</label>
+            <label for="password">Password</label>
+            <br />
             <input
               name="password"
               class="password"
               type="password"
               id="password"
+              ,
+              value="<%=oldInput.password%>"
             />
           </div>
 
           <div>
-            <input class="submit" type="submit" value="log in" />
+            <button class="submit" type="submit">Login</button>
           </div>
         </div>
       </form>
