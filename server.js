@@ -5,12 +5,14 @@ const app = express();
 const session = require("express-session");
 const MySQLStore = require("express-mysql-session")(session);
 const passport = require("passport");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const db = require("./util/database");
+console.log();
+console.log("jj");
 
 const options = {
-  host: "localhost",
+  host: "35.221.157.63",
   database: "mydb",
   user: "root",
   password: "Yasser29",
