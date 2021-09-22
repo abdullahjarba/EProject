@@ -8,9 +8,7 @@ const passport = require("passport");
 const bodyParser = require("body-parser");
 
 const db = require("./util/database");
-console.log();
-console.log("jj");
-
+console.log("test");
 const options = {
   host: "35.221.157.63",
   database: "mydb",
